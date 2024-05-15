@@ -42,7 +42,7 @@ Shader "Unlit/TexturedWithDetail" {
 
             float4 MyFragmentProgram(Interpolators i) : SV_TARGET { // Outpuhuts an RGBA color val for one pixel // SV_TARGET = frame buffer
                 float4 color = tex2D(_MainTex, i.uv) * _Tint;
-                color *= tex2D(_DetailTex, i.uvDetail) * 2;
+                color *= tex2D(_DetailTex, i.uvDetail) * unity_ColorSpaceDouble;
                 return color;
             }
 
